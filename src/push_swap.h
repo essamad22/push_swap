@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aakhtab <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 22:11:51 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/04/28 19:02:44 by aakhtab          ###   ########.fr       */
+/*   Created: 2023/05/21 01:25:18 by aakhtab           #+#    #+#             */
+/*   Updated: 2023/05/21 02:18:31 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "lib/libft.h"
-
+# include "../lib/libft.h"
+t_list  *fill_stacks(char **av);
 #endif

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   fill.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 13:47:01 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/05/21 02:16:55 by aakhtab          ###   ########.fr       */
+/*   Created: 2023/05/21 01:24:07 by aakhtab           #+#    #+#             */
+/*   Updated: 2023/05/21 02:23:40 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(int))
+t_list  *fill_stacks(char **av)
 {
-	t_list	*ptr;
-	t_list	*save;
+    t_list  *tmp;
+    int     i;
 
-	if (!(*lst) || !del)
-		return ;
-	ptr = *lst;
-	while (ptr)
-	{
-		save = ptr->next;
-		ft_lstdelone(ptr, del);
-		ptr = save;
-	}
-	*lst = NULL;
+    i = 0;
+    tmp = NULL;
+    while (av[++i])
+        ft_lstadd_back(&tmp , ft_lstnew(ft_atoi(av[i])));
+    return (tmp);
 }

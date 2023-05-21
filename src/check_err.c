@@ -1,30 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   check_err.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 13:47:01 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/05/21 02:16:55 by aakhtab          ###   ########.fr       */
+/*   Created: 2023/05/21 02:08:52 by aakhtab           #+#    #+#             */
+/*   Updated: 2023/05/21 02:09:43 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(int))
-{
-	t_list	*ptr;
-	t_list	*save;
-
-	if (!(*lst) || !del)
-		return ;
-	ptr = *lst;
-	while (ptr)
-	{
-		save = ptr->next;
-		ft_lstdelone(ptr, del);
-		ptr = save;
-	}
-	*lst = NULL;
-}
