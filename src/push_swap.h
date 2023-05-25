@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 01:25:18 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/05/24 19:09:41 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/05/25 04:13:36 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 # define PUSH_SWAP_H
 
 # include "../lib/libft.h"
+
+void    sa_rule(t_list *stack);
+void    sb_rule(t_list *stack);
+void    ss_rule(t_list *stack_a, t_list *stack_b);
+void    pa_rule(t_list **stack_a, t_list **stack_b);
+void    pb_rule(t_list **stack_a, t_list **stack_b);
+void    ra_rule(t_list **stack);
+void    rb_rule(t_list **stack);
+void    rr_rule(t_list **stack_a, t_list **stack_b);
+void    rra_rule(t_list **stack);
+void    rrb_rule(t_list **stack);
+void    rrr_rule(t_list **stack_a, t_list **stack_b);
 t_list  *fill_stacks(char **av);
 int     checker(char **av);
 #endif
