@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 02:08:52 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/05/24 19:28:41 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/05/24 23:56:23 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ int is_dup(char **args, int len)
         j = i + 1;
         while (j < len)
         {
-            //ft_printf("%d   %d\n", nums[i], nums[j]);
+            //ft_printf("%d\n", nums[i]);
             if (nums[i] == nums[j++])
                 return (j);
         }        
         i++;
     }
-    return (1);
+    return (0);
 }
 
 int is_int(char **av)
@@ -64,6 +64,7 @@ int is_int(char **av)
     i = 0;
     while (av[++i])
     {
+        //ft_printf("here\n");
         num = ft_atoi(av[i]);
         if (num < -2147483648 || num > 2147483647)
             return (i);
