@@ -6,7 +6,7 @@
 #    By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 17:40:21 by aakhtab           #+#    #+#              #
-#    Updated: 2023/05/24 04:19:08 by aakhtab          ###   ########.fr        #
+#    Updated: 2023/05/25 03:46:15 by aakhtab          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ S1			= "========================================================================
 
 CC			=	cc
 
-SRCS			=	src/main.c src/fill.c src/check_err.c 
+SRCS			=	src/main.c src/fill.c src/check_err.c 	\
+					src/s_rules.c src/p_rules.c src/r_rules.c src/rr_rules.c	\
 
 OBJS			=	$(SRCS:.c=.o)
 
