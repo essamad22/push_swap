@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 02:08:52 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/05/24 23:56:23 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/05/30 02:36:15 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,19 @@ int checker(char **av)
         return (j);
     if (is_int(av) != 0)
         return (i);
+    return (0);
+}
+
+int sort_check(t_list *stack)
+{
+    int n;
+
+    while (stack->next)
+    {
+        n = stack->content;
+        if (n > stack->next->content)
+            return (1);
+        stack = stack->next;
+    }
     return (0);
 }
