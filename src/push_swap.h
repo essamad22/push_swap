@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 01:25:18 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/05/30 02:33:40 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/16 15:01:14 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 # define PUSH_SWAP_H
 
 # include "../lib/libft.h"
+
+// ------- structs -------
+typedef struct s_lis
+{
+	int	i;
+	int	j;
+	int	*lis;
+	int *s_sequence;
+	int *length;
+}	t_lis;
+
 // ------- rules functions ---------
 void    sa_rule(t_list *stack);
 void    sb_rule(t_list *stack);
