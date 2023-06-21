@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 01:25:18 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/20 22:37:35 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/21 15:44:34 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ int     checker(char **av);
 int     sort_check(t_list *stack);
 void    get_smallest(t_list **stack_a);
 // ------- algo functions ------------
-void	lis_sorting(t_list *stack_a, t_list *stack_b);
+void	lis_sorting(t_list **stack_a, t_list **stack_b);
 #endif

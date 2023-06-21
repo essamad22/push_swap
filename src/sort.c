@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 04:55:45 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/18 23:10:59 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/21 15:44:10 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,8 @@ void    five_num(t_list **stack_a, t_list **stack_b)
 void    sort_stack(t_list **stack_a, t_list **stack_b)
 {
     int len;
-    int i;
 
     len = ft_lstsize(*stack_a);
-    i = len;
     if (len == 2)
         return (two_num(*stack_a));
     if (len == 3)
@@ -69,5 +67,5 @@ void    sort_stack(t_list **stack_a, t_list **stack_b)
     if (len == 5)
         return (five_num(stack_a, stack_b));
     if (len > 5)
-		lis_sorting(*stack_a, *stack_b);
+		lis_sorting(stack_a, stack_b);
 }

@@ -3,15 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   lis.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aakhtab <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:19:55 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/20 22:41:43 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/21 15:47:51 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
+
+int not_lis(int n, int *lis, int len)
+{
+	int	i;
+
+	i = -1;
+	while (++i < len)
+		if (n == lis[i])
+			return (1);
+	return (0);
+}
 
 int	*stack_to_arr(t_list *list, int len)
 {
@@ -76,32 +87,41 @@ int	*ft_lis(int *arr, int stack_len, int *lis_len)
 		}
 	}
 	lis.lis = get_lis(arr, lis, stack_len, lis_len);
-	lis.i = -1;
-	while (++lis.i < stack_len)
-		ft_printf("[%d]", arr[lis.i]);
-	ft_printf("\n");
-	lis.i = -1;
-	while (++lis.i < stack_len)
-		ft_printf("[%d]", lis.length[lis.i]);
-	lis.i = -1;
-	ft_printf("\n");
-	while (++lis.i < *lis_len)
-		ft_printf("[%d]", lis.lis[lis.i]);
+	// lis.i = -1;
+	// while (++lis.i < stack_len)
+	// 	ft_printf("[%d]", arr[lis.i]);
+	// ft_printf("\n");
+	// lis.i = -1;
+	// while (++lis.i < stack_len)
+	// 	ft_printf("[%d]", lis.length[lis.i]);
+	// lis.i = -1;
+	// ft_printf("\n");
+	// while (++lis.i < *lis_len)
+	// 	ft_printf("[%d]", lis.lis[lis.i]);
 	free(lis.length);
 	free(lis.s_sequence);
-	free(lis.arr);
 	return (lis.lis);
 }
 
-void	lis_sorting(t_list *stack_a, t_list *stack_b)
+void	lis_sorting(t_list **stack_a, t_list **stack_b)
 {
 	int	*arr;
 	int *lis;
 	int	len;
 	int	stack_len;
 	
-	stack_len = ft_lstsize(stack_a);
-	arr = stack_to_arr(stack_a, stack_len);
+	get_smallest(stack_a);
+	stack_len = ft_lstsize(*stack_a);
+	arr = stack_to_arr(*stack_a, stack_len);
 	lis = ft_lis(arr, stack_len, &len);
-	(void)stack_b;
+	while (len < stack_len)
+	{
+		if (not_lis((*stack_a)->content, lis, len) == 0)
+		{
+			pb_rule(stack_a, stack_b);
+			stack_len--;
+		}
+		else
+			ra_rule(stack_a);
+	}
 }
