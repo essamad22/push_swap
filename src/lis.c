@@ -6,25 +6,26 @@
 /*   By: aakhtab <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:19:55 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/20 19:24:34 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/20 22:41:43 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	*stack_to_arr(t_list *list, int len)
 {
 	int	i;
-	int	*arr;
+	t_lis lis;
 
-	arr = ft_calloc(len, sizeof(int));
+	lis.arr = ft_calloc(len, sizeof(int));
 	i = -1;
 	while (++i < len)
 	{
-		arr[i] = list->content;
+		lis.arr[i] = list->content;
 		list = list->next;
 	}
-	return (arr);
+	return (lis.arr);
 }
 
 int	*get_lis(int *arr, t_lis lis, int stack_len, int *len)
@@ -86,7 +87,10 @@ int	*ft_lis(int *arr, int stack_len, int *lis_len)
 	ft_printf("\n");
 	while (++lis.i < *lis_len)
 		ft_printf("[%d]", lis.lis[lis.i]);
-	return (lis.length);
+	free(lis.length);
+	free(lis.s_sequence);
+	free(lis.arr);
+	return (lis.lis);
 }
 
 void	lis_sorting(t_list *stack_a, t_list *stack_b)

@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 01:25:18 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/18 23:09:40 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/20 22:37:35 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_lis
 	int	*lis;
 	int *s_sequence;
 	int *length;
+	int	*arr;
 }	t_lis;
 
 // ------- rules functions ---------
