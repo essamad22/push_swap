@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:19:55 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/21 15:47:51 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/21 18:45:12 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,17 +87,6 @@ int	*ft_lis(int *arr, int stack_len, int *lis_len)
 		}
 	}
 	lis.lis = get_lis(arr, lis, stack_len, lis_len);
-	// lis.i = -1;
-	// while (++lis.i < stack_len)
-	// 	ft_printf("[%d]", arr[lis.i]);
-	// ft_printf("\n");
-	// lis.i = -1;
-	// while (++lis.i < stack_len)
-	// 	ft_printf("[%d]", lis.length[lis.i]);
-	// lis.i = -1;
-	// ft_printf("\n");
-	// while (++lis.i < *lis_len)
-	// 	ft_printf("[%d]", lis.lis[lis.i]);
 	free(lis.length);
 	free(lis.s_sequence);
 	return (lis.lis);
