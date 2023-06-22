@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:19:55 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/21 18:45:12 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/22 18:48:02 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ int not_lis(int n, int *lis, int len)
 int	*stack_to_arr(t_list *list, int len)
 {
 	int	i;
-	t_lis lis;
+	int *arr;
 
-	lis.arr = ft_calloc(len, sizeof(int));
+	arr = ft_calloc(len, sizeof(int));
 	i = -1;
 	while (++i < len)
 	{
-		lis.arr[i] = list->content;
+		arr[i] = list->content;
 		list = list->next;
 	}
-	return (lis.arr);
+	return (arr);
 }
 
 int	*get_lis(int *arr, t_lis lis, int stack_len, int *len)
@@ -113,4 +113,5 @@ void	lis_sorting(t_list **stack_a, t_list **stack_b)
 		else
 			ra_rule(stack_a);
 	}
+	move_to_a();
 }
