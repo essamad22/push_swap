@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 01:25:18 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/23 15:23:16 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/23 22:15:36 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_lis
 	int *s_sequence;
 	int *length;
 }	t_lis;
+
 typedef struct s_pos
 {
 	int *arr_a;
@@ -32,7 +33,9 @@ typedef struct s_pos
 	int	len_b;
 	int pos_a;
 	int	pos_b;
+	int	n_move;
 }	t_pos;
+
 // ------- rules functions ---------
 void    sa_rule(t_list *stack);
 void    sb_rule(t_list *stack);
@@ -55,4 +58,5 @@ int		*stack_to_arr(t_list *list, int len);
 // ------- algo functions ------------
 void	lis_sorting(t_list **stack_a, t_list **stack_b);
 void	move_to_a(t_list **stack_a, t_list **stack_b);
+void	moves_count(t_pos **pos, int index, int i);
 #endif
