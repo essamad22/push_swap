@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 01:25:18 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/23 22:15:36 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/24 05:08:09 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,7 @@ int		*stack_to_arr(t_list *list, int len);
 void	lis_sorting(t_list **stack_a, t_list **stack_b);
 void	move_to_a(t_list **stack_a, t_list **stack_b);
 void	moves_count(t_pos **pos, int index, int i);
+int		get_b_pos(int len_b, int index);
+int		first_half(int a_pos, int b_pos);
+int		last_half(int a_pos, int b_pos);
 #endif
