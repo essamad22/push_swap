@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 01:24:45 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/21 15:42:26 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/24 16:46:05 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ int main(int ac, char *av[])
 	{
        ft_printf("|%d| ", stack_a->content);
        stack_a = stack_a->next;
-    }
-    ft_printf("\n");
-    while (stack_b)
-    {
-        ft_printf("|%d| ", stack_b->content);
-        stack_b = stack_b->next;
     }
     return 0;
 }

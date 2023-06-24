@@ -6,7 +6,7 @@
 #    By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 17:40:21 by aakhtab           #+#    #+#              #
-#    Updated: 2023/06/23 22:11:34 by aakhtab          ###   ########.fr        #
+#    Updated: 2023/06/24 16:44:12 by aakhtab          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ CC			=	cc
 SRCS			=	src/main.c src/fill.c src/check_err.c src/sort.c 	\
 					src/s_rules.c src/p_rules.c src/r_rules.c src/rr_rules.c	\
 					src/get_small.c src/lis.c src/get_pos.c src/move_to_a.c 	\
+					src/get_pos_2.c src/move.c
 
 OBJS			=	$(SRCS:.c=.o)
 

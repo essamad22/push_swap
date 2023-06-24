@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 18:47:10 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/24 04:29:35 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/24 16:52:02 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,10 @@ void	move_to_a(t_list **stack_a, t_list **stack_b)
 {
 	t_pos	best;
 
-	while ((ft_lstsize(*stack_b))!= 0)
+	while (ft_lstsize(*stack_b) != 0)
 	{
 		best = best_move(stack_a, stack_b);
-		ft_printf("b_pos = %d\n", best.pos_b);
-		ft_printf("a_pos = %d\n", best.pos_a);
-		return;
+		move_best(best, stack_a, stack_b);
 	}
+	get_smallest(stack_a);
 }

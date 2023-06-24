@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 01:25:18 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/24 15:35:24 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/24 16:16:04 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,5 @@ int		first_half(int a_pos, int b_pos);
 int		last_half(int a_pos, int b_pos);
 void	moves_count_last(t_pos **pos, int index, int j);
 void	max(t_pos **pos, int index);
+void	move_best(t_pos pos, t_list **stack_a, t_list **stack_b);
 #endif

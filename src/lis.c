@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:19:55 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/23 22:23:07 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/24 15:43:28 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,5 @@ void	lis_sorting(t_list **stack_a, t_list **stack_b)
 		else
 			ra_rule(stack_a);
 	}
-	ft_printf("here");
 	move_to_a(stack_a, stack_b);
 }
