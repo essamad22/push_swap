@@ -6,7 +6,7 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 18:47:10 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/24 16:52:02 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/29 13:18:56 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_moves_top(t_pos **pos, int index)
 {
 	int	b_pos;
-	int moves;
-	
+	int	moves;
+
 	if (index <= ((**pos).len_b / 2))
 	{
 		b_pos = index;
@@ -42,7 +42,7 @@ void	get_pos(t_pos *pos, int index)
 	int	i;
 	int	j;
 
-	i= -1;
+	i = -1;
 	j = pos->len_a / 2;
 	if ((pos->arr_a[0] > pos->arr_b[index]
 			&& pos->arr_a[pos->len_a - 1] < pos->arr_b[index]))
@@ -77,6 +77,8 @@ t_pos	best_move(t_list **stack_a, t_list **stack_b)
 	pos.arr_b = stack_to_arr(*stack_b, pos.len_b);
 	while (++i < pos.len_b)
 		get_pos(&pos, i);
+	free(pos.arr_a);
+	free(pos.arr_b);
 	return (pos);
 }
 

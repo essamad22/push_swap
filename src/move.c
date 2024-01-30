@@ -6,7 +6,7 @@
 /*   By: aakhtab <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 16:02:29 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/24 16:50:21 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/25 00:29:04 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ void	move_best(t_pos pos, t_list **stack_a, t_list **stack_b)
 {
 	while (pos.pos_a != 0 || pos.pos_b != 0)
 	{
-		if ((pos.pos_a > 0 && pos.pos_b > 0) || (pos.pos_a < 0 && pos.pos_b < 0))
+		if ((pos.pos_a > 0 && pos.pos_b > 0)
+			|| (pos.pos_a < 0 && pos.pos_b < 0))
 			double_move(&pos, stack_a, stack_b);
 		else if (pos.pos_a > 0 && pos.pos_b < 0)
 		{

@@ -6,14 +6,13 @@
 /*   By: aakhtab <aakhtab@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:19:55 by aakhtab           #+#    #+#             */
-/*   Updated: 2023/06/24 15:43:28 by aakhtab          ###   ########.fr       */
+/*   Updated: 2023/06/29 13:21:26 by aakhtab          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
-int not_lis(int n, int *lis, int len)
+int	not_lis(int n, int *lis, int len)
 {
 	int	i;
 
@@ -27,7 +26,7 @@ int not_lis(int n, int *lis, int len)
 int	*stack_to_arr(t_list *list, int len)
 {
 	int	i;
-	int *arr;
+	int	*arr;
 
 	arr = ft_calloc(len, sizeof(int));
 	i = -1;
@@ -41,8 +40,8 @@ int	*stack_to_arr(t_list *list, int len)
 
 int	*get_lis(int *arr, t_lis lis, int stack_len, int *len)
 {
-	int num;
-	int i;
+	int	num;
+	int	i;
 
 	lis.i = 0;
 	num = lis.length[lis.i];
@@ -63,9 +62,10 @@ int	*get_lis(int *arr, t_lis lis, int stack_len, int *len)
 	}
 	return (lis.lis);
 }
+
 int	*ft_lis(int *arr, int stack_len, int *lis_len)
 {
-	t_lis lis;
+	t_lis	lis;
 
 	lis.length = ft_calloc(stack_len, sizeof(int));
 	lis.s_sequence = ft_calloc(stack_len, sizeof(int));
@@ -78,8 +78,8 @@ int	*ft_lis(int *arr, int stack_len, int *lis_len)
 		lis.j = -1;
 		while (++lis.j < lis.i)
 		{
-			if (arr[lis.j] < arr[lis.i] 
-					&& lis.length[lis.i] <= lis.length[lis.j] + 1)
+			if (arr[lis.j] < arr[lis.i]
+				&& lis.length[lis.i] <= lis.length[lis.j] + 1)
 			{
 				lis.length[lis.i] = lis.length[lis.j] + 1;
 				lis.s_sequence[lis.i] = lis.j;
@@ -95,11 +95,10 @@ int	*ft_lis(int *arr, int stack_len, int *lis_len)
 void	lis_sorting(t_list **stack_a, t_list **stack_b)
 {
 	int	*arr;
-	int *lis;
+	int	*lis;
 	int	len;
 	int	stack_len;
-	
-	get_smallest(stack_a);
+
 	stack_len = ft_lstsize(*stack_a);
 	arr = stack_to_arr(*stack_a, stack_len);
 	lis = ft_lis(arr, stack_len, &len);
@@ -113,5 +112,7 @@ void	lis_sorting(t_list **stack_a, t_list **stack_b)
 		else
 			ra_rule(stack_a);
 	}
+	free(arr);
+	free(lis);
 	move_to_a(stack_a, stack_b);
 }
